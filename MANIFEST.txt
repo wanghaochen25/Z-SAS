@@ -1,0 +1,31 @@
+ZSTAR Spatial 0.20 minimal reproduction package
+
+Root:
+  /home/whc/零样本风格迁移/ZSTAR_spatial020_minimal
+
+Model:
+  stable-diffusion-v1-5
+  Diffusers-format Stable Diffusion v1.5 model directory.
+  Files are hardlinked from the verified local model to avoid duplicate local storage.
+
+Entrypoint:
+  bash run_spatial020.sh
+
+Reference output:
+  workdir/reference_outputs/spatial020
+
+Expected generated output:
+  workdir/reproduce_spatial020
+
+Primary config:
+  --start_step 5
+  --end_step 30
+  --layer_index 20,22,24,26,28,30
+  --content_style_scale 1.50
+  --style_content_scale 1.50
+  --internal_attention_protect
+  --semantic_self_refine
+  --semantic_self_refine_weight 0.15
+  --spatial_adaptive_scale
+  --spatial_adaptive_strength 0.20
+  --spatial_adaptive_min_scale 0.75
